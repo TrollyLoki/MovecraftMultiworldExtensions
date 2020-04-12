@@ -1,0 +1,6 @@
+name: MovecraftMultiworldExtensions
+softdepend: [Movecraft]
+version: ${project.version}
+description: Extensions for Movecraft multiworld including circumnavigation and automatic world switching
+authors: [TrollyLoki]
+main: net.trollyloki.movecraftmultiworldextensions.MovecraftMultiworldExtensions

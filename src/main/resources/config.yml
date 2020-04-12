@@ -1,0 +1,13 @@
+circumnavigation:
+  enabled: false
+  
+world-switching:
+  enabled: false
+  heights:
+    world:
+      world_nether: 50
+      world_the_end: 200
+    world_nether:
+      world: 200
+    world_the_end:
+      world: 50

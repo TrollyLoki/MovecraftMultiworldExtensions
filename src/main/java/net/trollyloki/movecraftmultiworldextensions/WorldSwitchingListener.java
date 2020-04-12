@@ -1,5 +1,6 @@
 package net.trollyloki.movecraftmultiworldextensions;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.bukkit.Bukkit;
@@ -10,7 +11,7 @@ import net.countercraft.movecraft.events.CraftPreTranslateEvent;
 
 public class WorldSwitchingListener implements Listener {
 	
-	public static Map<String, Map<String, Integer>> heights;
+	public static Map<String, Map<String, Integer>> heights = new HashMap<String, Map<String, Integer>>();
 	
 	@EventHandler
 	public void onPreTranslateEvent(CraftPreTranslateEvent event) {

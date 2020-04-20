@@ -1,7 +1,7 @@
 circumnavigation:
   enabled: false
   
-world-switching:
+height-switching:
   enabled: false
   heights:
     world:
@@ -11,3 +11,8 @@ world-switching:
       world: 200
     world_the_end:
       world: 50
+
+region-switching:
+  enabled: false
+  regions:
+    exampleregion: 'world_the_end'

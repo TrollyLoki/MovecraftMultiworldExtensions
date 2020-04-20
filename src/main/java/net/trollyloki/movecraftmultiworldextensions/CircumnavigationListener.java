@@ -18,17 +18,17 @@ public class CircumnavigationListener implements Listener {
 			int worldborderZ = (int) (event.getWorld().getWorldBorder().getCenter().getZ());
 			int worldborderSize = (int) (event.getWorld().getWorldBorder().getSize());
 			
-			if (!withinWorldBorder(event.getWorld(), new MovecraftLocation(event.getCraft().getHitBox().getMinX() + event.getDx(), 0, worldborderZ))) {
+			if (event.getDx() < 0 && !withinWorldBorder(event.getWorld(), new MovecraftLocation(event.getCraft().getHitBox().getMinX() + event.getDx(), 0, worldborderZ))) {
 				event.setDx(worldborderSize - event.getCraft().getHitBox().getXLength());
 			}
-			else if (!withinWorldBorder(event.getWorld(), new MovecraftLocation(event.getCraft().getHitBox().getMaxX() + event.getDx(), 0, worldborderZ))) {
+			else if (event.getDx() > 0 && !withinWorldBorder(event.getWorld(), new MovecraftLocation(event.getCraft().getHitBox().getMaxX() + event.getDx(), 0, worldborderZ))) {
 				event.setDx(-(worldborderSize - event.getCraft().getHitBox().getXLength()));
 			}
 			
-			if (!withinWorldBorder(event.getWorld(), new MovecraftLocation(worldborderX, 0, event.getCraft().getHitBox().getMinZ() + event.getDz()))) {
+			if (event.getDz() < 0 && !withinWorldBorder(event.getWorld(), new MovecraftLocation(worldborderX, 0, event.getCraft().getHitBox().getMinZ() + event.getDz()))) {
 				event.setDz(worldborderSize - event.getCraft().getHitBox().getZLength());
 			}
-			else if (!withinWorldBorder(event.getWorld(), new MovecraftLocation(worldborderX, 0, event.getCraft().getHitBox().getMaxZ() + event.getDz()))) {
+			else if (event.getDz() > 0 && !withinWorldBorder(event.getWorld(), new MovecraftLocation(worldborderX, 0, event.getCraft().getHitBox().getMaxZ() + event.getDz()))) {
 				event.setDz(-(worldborderSize - event.getCraft().getHitBox().getZLength()));
 			}
 			

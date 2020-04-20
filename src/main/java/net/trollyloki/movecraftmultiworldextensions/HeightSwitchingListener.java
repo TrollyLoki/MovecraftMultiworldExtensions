@@ -9,13 +9,13 @@ import org.bukkit.event.Listener;
 
 import net.countercraft.movecraft.events.CraftPreTranslateEvent;
 
-public class WorldSwitchingListener implements Listener {
+public class HeightSwitchingListener implements Listener {
 	
 	public static Map<String, Map<String, Integer>> heights = new HashMap<String, Map<String, Integer>>();
 	
 	@EventHandler
 	public void onPreTranslateEvent(CraftPreTranslateEvent event) {
-		if (MovecraftMultiworldExtensions.doWorldSwitching) {
+		if (MovecraftMultiworldExtensions.doHeightSwitching) {
 			
 			String craftWorld = event.getWorld().getName();
 			Map<String, Integer> switchHeights = heights.get(craftWorld);

@@ -11,6 +11,11 @@
 			<id>spigot-repo</id>
 			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 		</repository>
+		
+		<repository>
+	        <id>sk89q-repo</id>
+	        <url>https://maven.enginehub.org/repo/</url>
+	    </repository>
 	</repositories>
 
 	<dependencies>
@@ -19,5 +24,12 @@
 			<artifactId>spigot</artifactId>
 			<version>1.10.2-R0.1-SNAPSHOT</version>
 		</dependency>
+		
+		<dependency>
+	        <groupId>com.sk89q</groupId>
+	        <artifactId>worldguard</artifactId>
+	        <version>6.1.1-SNAPSHOT</version>
+	        <scope>provided</scope>
+	    </dependency>
 	</dependencies>
 </project>

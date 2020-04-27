@@ -55,8 +55,8 @@ public class MovecraftMultiworldExtensions extends JavaPlugin {
 		
 		if (doRegionSwitching) {
 			RegionSwitchingListener.regions.clear();
-			for (String region : instance.getConfig().getConfigurationSection("height-switching.regions").getKeys(false)) {
-				RegionSwitchingListener.regions.put(region, instance.getConfig().getString("height-switching.regions." + region));
+			for (String region : instance.getConfig().getConfigurationSection("region-switching.regions").getKeys(false)) {
+				RegionSwitchingListener.regions.put(region, instance.getConfig().getString("region-switching.regions." + region));
 			}
 		}
 	}

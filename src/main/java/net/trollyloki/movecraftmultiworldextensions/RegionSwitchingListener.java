@@ -13,7 +13,7 @@ import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 
 import net.countercraft.movecraft.MovecraftLocation;
 import net.countercraft.movecraft.events.CraftPreTranslateEvent;
-import net.countercraft.movecraft.utils.HashHitBox;
+import net.countercraft.movecraft.utils.BitmapHitBox;
 
 public class RegionSwitchingListener implements Listener {
 	
@@ -25,7 +25,7 @@ public class RegionSwitchingListener implements Listener {
 			
 			RegionManager rm = WGBukkit.getRegionManager(event.getCraft().getW());
 			
-			HashHitBox hitbox = event.getCraft().getHitBox();
+			BitmapHitBox hitbox = event.getCraft().getHitBox();
 			/*Vector pos1 = new com.sk89q.worldedit.Vector(hitbox.getMinX() + event.getDx(), hitbox.getMinY() + event.getDy(), hitbox.getMinZ() + event.getDz());
 			Vector pos2 = new com.sk89q.worldedit.Vector(hitbox.getMaxX() + event.getDx(), hitbox.getMaxY() + event.getDy(), hitbox.getMaxZ() + event.getDz());
 			CuboidRegion region = new com.sk89q.worldedit.regions.CuboidRegion(pos1, pos2);*/

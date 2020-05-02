@@ -33,7 +33,7 @@ public class RegionSwitchingListener implements Listener {
 			// Check each defined region to see if a block is in it - probably faster
 			for (String regionName : regions.keySet()) {
 				ProtectedRegion region = rm.getRegion(regionName);
-				for (MovecraftLocation location : hitbox) {
+				if (region != null) for (MovecraftLocation location : hitbox) {
 					if (region.contains(location.getX(), location.getY(), location.getZ())) {
 						event.setWorld(Bukkit.getWorld(regions.get(regionName)));
 					}

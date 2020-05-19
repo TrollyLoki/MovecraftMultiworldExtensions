@@ -32,4 +32,16 @@
 	        <scope>provided</scope>
 	    </dependency>
 	</dependencies>
+	
+	<build>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 </project>

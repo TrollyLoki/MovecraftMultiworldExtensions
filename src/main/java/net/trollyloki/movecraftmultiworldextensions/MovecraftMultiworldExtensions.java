@@ -13,6 +13,7 @@ public class MovecraftMultiworldExtensions extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		instance = this;
+		saveDefaultConfig();
 		reload();
 		
 		getServer().getPluginManager().registerEvents(new CircumnavigationListener(), this);

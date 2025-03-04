@@ -7,13 +7,15 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-import com.sk89q.worldguard.bukkit.WGBukkit;
+import com.sk89q.worldedit.bukkit.BukkitAdapter;
+import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.managers.RegionManager;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
+import com.sk89q.worldguard.protection.regions.RegionContainer;
 
 import net.countercraft.movecraft.MovecraftLocation;
 import net.countercraft.movecraft.events.CraftPreTranslateEvent;
-import net.countercraft.movecraft.utils.BitmapHitBox;
+import net.countercraft.movecraft.util.hitboxes.HitBox;
 
 public class RegionSwitchingListener implements Listener {
 	
@@ -23,9 +25,10 @@ public class RegionSwitchingListener implements Listener {
 	public void onPreTranslateEvent(CraftPreTranslateEvent event) {
 		if (MovecraftMultiworldExtensions.doRegionSwitching) {
 			
-			RegionManager rm = WGBukkit.getRegionManager(event.getCraft().getW());
+			RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+			RegionManager rm = container.get(BukkitAdapter.adapt(event.getCraft().getWorld()));
 			
-			BitmapHitBox hitbox = event.getCraft().getHitBox();
+			HitBox hitbox = event.getCraft().getHitBox();
 			/*Vector pos1 = new com.sk89q.worldedit.Vector(hitbox.getMinX() + event.getDx(), hitbox.getMinY() + event.getDy(), hitbox.getMinZ() + event.getDz());
 			Vector pos2 = new com.sk89q.worldedit.Vector(hitbox.getMaxX() + event.getDx(), hitbox.getMaxY() + event.getDy(), hitbox.getMaxZ() + event.getDz());
 			CuboidRegion region = new com.sk89q.worldedit.regions.CuboidRegion(pos1, pos2);*/

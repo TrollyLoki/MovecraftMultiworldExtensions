@@ -1,6 +1,6 @@
 package net.trollyloki.movecraftmultiworldextensions;
 
-import static net.countercraft.movecraft.utils.MathUtils.withinWorldBorder;
+import static net.countercraft.movecraft.util.MathUtils.withinWorldBorder;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

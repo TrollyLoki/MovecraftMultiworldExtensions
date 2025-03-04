@@ -1,16 +1,16 @@
 circumnavigation:
   enabled: false
-  
+
 height-switching:
   enabled: false
   heights:
     world:
-      world_nether: 50
-      world_the_end: 200
+      world_nether: -64
+      world_the_end: 319
     world_nether:
-      world: 200
+      world: 255
     world_the_end:
-      world: 50
+      world: 0
 
 region-switching:
   enabled: false

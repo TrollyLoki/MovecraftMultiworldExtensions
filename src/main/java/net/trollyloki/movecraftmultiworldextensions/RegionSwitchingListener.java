@@ -39,6 +39,7 @@ public class RegionSwitchingListener implements Listener {
 				if (region != null) for (MovecraftLocation location : hitbox) {
 					if (region.contains(location.getX(), location.getY(), location.getZ())) {
 						event.setWorld(Bukkit.getWorld(regions.get(regionName)));
+						return;
 					}
 				}
 			}

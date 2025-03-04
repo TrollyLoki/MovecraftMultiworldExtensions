@@ -24,8 +24,8 @@ public class HeightSwitchingListener implements Listener {
 
 			for (String world : switchHeights.keySet()) {
 				int switchHeight = switchHeights.get(world);
-				if (maxY < switchHeight && maxY + event.getDy() >= switchHeight ||
-						minY > switchHeight && minY + event.getDy() <= switchHeight) {
+				if (maxY <= switchHeight && maxY + event.getDy() > switchHeight ||
+						minY >= switchHeight && minY + event.getDy() < switchHeight) {
 
 					event.setWorld(Bukkit.getWorld(world));
 					int destHeight = heights.get(world).get(craftWorld);

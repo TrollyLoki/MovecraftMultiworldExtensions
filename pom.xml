@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.trollyloki.movecraftmultiworldextensions</groupId>
 	<artifactId>MovecraftMultiworldExtensions</artifactId>
-	<version>1.0.2</version>
+	<version>1.1</version>
 
 	<properties>
 		<maven.compiler.release>21</maven.compiler.release>
@@ -23,6 +23,10 @@
 	        <id>sk89q-repo</id>
 	        <url>https://maven.enginehub.org/repo/</url>
 	    </repository>
+		<repository>
+			<id>onarandombodx</id>
+			<url>https://repo.onarandombox.com/content/groups/public/</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
@@ -42,6 +46,18 @@
 	        <version>7.0.10</version>
 	        <scope>provided</scope>
 	    </dependency>
+		<dependency>
+			<groupId>org.mvplugins.multiverse.core</groupId>
+			<artifactId>multiverse-core</artifactId>
+			<version>5.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mvplugins.multiverse.portals</groupId>
+			<artifactId>multiverse-portals</artifactId>
+			<version>5.0.0</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	
 	<build>

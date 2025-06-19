@@ -16,3 +16,5 @@ region-switching:
   enabled: false
   regions:
     exampleregion: 'world_the_end'
+
+multiverse-portals: false

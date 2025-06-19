@@ -8,7 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class MovecraftMultiworldExtensions extends JavaPlugin {
 	
 	private static MovecraftMultiworldExtensions instance;
-	public static boolean doCircumnavigation = false, doHeightSwitching = false, doRegionSwitching = false;
+	public static boolean doCircumnavigation = false, doHeightSwitching = false, doRegionSwitching = false, doMultiversePortals = false;
 	
 	@Override
 	public void onEnable() {
@@ -19,11 +19,16 @@ public class MovecraftMultiworldExtensions extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new CircumnavigationListener(), this);
 		getServer().getPluginManager().registerEvents(new HeightSwitchingListener(), this);
 		
-		if (instance.getServer().getPluginManager().getPlugin("WorldGuard") != null) {
+		if (getServer().getPluginManager().getPlugin("WorldGuard") != null) {
 			getServer().getPluginManager().registerEvents(new RegionSwitchingListener(), this);
 		}
 		else {
-			instance.getLogger().info("WorldGuard not found. Region based switching will not be available.");
+			getLogger().info("WorldGuard not found. Region based switching will not be available.");
+		}
+
+		if (getServer().getPluginManager().getPlugin("Multiverse-Portals") != null) {
+			getServer().getPluginManager().registerEvents(new MultiversePortalsListener(), this);
+			getLogger().info("Multiverse-Portals support enabled.");
 		}
 		
 	}
@@ -42,6 +47,7 @@ public class MovecraftMultiworldExtensions extends JavaPlugin {
 		doCircumnavigation = instance.getConfig().getBoolean("circumnavigation.enabled");
 		doHeightSwitching = instance.getConfig().getBoolean("height-switching.enabled");
 		doRegionSwitching = instance.getConfig().getBoolean("region-switching.enabled");
+		doMultiversePortals = instance.getConfig().getBoolean("multiverse-portals");
 		
 		if (doHeightSwitching) {
 			HeightSwitchingListener.heights.clear();
